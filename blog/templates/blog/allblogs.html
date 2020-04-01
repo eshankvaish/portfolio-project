@@ -1,15 +1,15 @@
 
 <!doctype html>
 <html lang="en">
+    {% load staticfiles %}
+
   <head>
-    
-{% load staticfiles %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.6">
-    <title>Eshank Vaish</title>
+    <title>Eshank's Blog</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
 
@@ -54,51 +54,34 @@
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link" href="https://www.linkedin.com/in/eshankvaish/" target="_blank">LinkedIn</a>
-                <a class="nav-item nav-link" href="{% static 'Eshank_resume.pdf' %}" target="_blank">Resume</a>
-                <a class="nav-item nav-link" href="{% url 'allblogs' %}">Blog</a>
-              </div>
+                <div class="navbar-nav ml-auto">
+                  <a class="nav-item nav-link" href="https://www.linkedin.com/in/eshankvaish/" target="_blank">LinkedIn</a>
+                  <a class="nav-item nav-link" href="{% static 'Eshank_resume.pdf' %}" target="_blank">Resume</a>
+                  <a class="nav-item nav-link" href="{% url 'allblogs' %}">Blog</a>
+                </div>
             </div>
         </nav>
 </header>
 
 <main role="main">
-
-  <section class="jumbotron text-center">
     <div class="container">
-      <h1>Hi, I am Eshank</h1>
-      <p class="lead text-muted">My name is Eshank, will add to it...</p>
-      <p><a href="mailto:eshank.vaish@gmail.com" class="btn btn-primary my-2">Email</a></p>
-      <img src="{% static 'eshank1.jpg' %}" alt="" height="400" width="400">
+    <h1 class="text-center pt-3">
+        Welcome to Eshank's Blog
+    </h1>
+    <br>
+    <h2>
+        Latest posts
+    </h2>
+    <hr>
+    {% for blog in blogs.all %}
+        <h3><a href="{% url 'detail' blog.id %}">{{ blog.title }}</a></h3>
+        <p>{{ blog.pub_date_pretty }}</p>
+        <p><img class="img-fluid" src="{{ blog.image.url }}" alt="" height="200" width="200"></p>
+        <p>{{ blog.summary }}</p>
+        <hr>    
+    {% endfor %}
     </div>
-  </section>
-
-  <div class="album py-5 bg-light">
-    <div class="container">
-
-      {% if jobs %}
-      <h2>Latest Jobs</h2>
-      <br>
-      <div class="row">
-        
-        {% for job in jobs.all %}
-        <div class="col-md-4">
-          <div class="card mb-4 box-shadow">
-            <img class="card-img-top" src="{{ job.image.url }}" alt="">
-=            <div class="card-body">
-              <p class="card-text">{{ job.summary }}</p>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-        
-      </div>
     
-      {% endif %}
-    </div>
-  </div>
-
 </main>
 
 <footer class="text-muted">
