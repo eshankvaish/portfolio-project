@@ -46,27 +46,30 @@
     <!-- Custom styles for this template -->
     <link href="album.css" rel="stylesheet">
   </head>
-  <body>
+  <body style="background-color: #e9ecef;">
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container">
             <a class="navbar-brand" href="{% url 'home' %}">Eshank Vaish</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link" href="{% url 'home' %}">Home</a>
                 <a class="nav-item nav-link" href="https://www.linkedin.com/in/eshankvaish/" target="_blank">LinkedIn</a>
                 <a class="nav-item nav-link" href="{% static 'Eshank_resume.pdf' %}" target="_blank">Resume</a>
                 <a class="nav-item nav-link" href="{% url 'allblogs' %}">Blog</a>
               </div>
             </div>
+          </div>
         </nav>
-</header>
+  </header>
 
 {% block content %}
 
 {% endblock %}
-
+<hr>
 <footer class="text-muted">
   <div class="container text-center">
     <p>&copy; Eshank Vaish {% now "Y" %}</p>

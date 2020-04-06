@@ -6,40 +6,125 @@
 
 <main role="main">
 
-  <section class="jumbotron text-center">
+  <section class="jumbotron text-center" style="margin-bottom: 0px; padding-bottom: 40px;">
     <div class="container">
-      <h1>Hi, I am Eshank</h1>
-      <p class="lead text-muted">My name is Eshank, will add to it...</p>
-      <p><a href="mailto:eshank.vaish@gmail.com" class="btn btn-primary my-2">Email</a></p>
-      <!--<img src="{% static 'eshank1.jpg' %}" alt="" height="400" width="400">-->
-    </div>
-  </section>
-
-  <div class="album py-5 bg-light">
-    <div class="container">
-
-      {% if jobs %}
-      <h2>Latest Jobs</h2>
-      <br>
       <div class="row">
-        
-        {% for job in jobs.all %}
-        <div class="col-md-4">
-          <div class="card mb-4 box-shadow">
-            <img class="card-img-top" src="{{ job.image.url }}" alt="">
-            <div class="card-body">
-              <p class="card-text">{{ job.summary }}</p>
-            </div>
-          </div>
+        <div class="col-4">
+          <img class="img-fluid" src="{% static 'eshank1.jpg' %}" alt="" height="300px" width="300px" style="border: 1px solid black;">
         </div>
-        {% endfor %}
-        
+        <div class="col-8 text-left">
+          <h1>About Me</h1>
+            <hr>
+            <p class="lead text-muted">Hi, I am Eshank, will add to it...</p>
+            <p><a href="mailto:eshank.vaish@gmail.com" class="btn btn-primary my-2">Email</a></p>
+        </div>      
       </div>
-    
-      {% endif %}
     </div>
-  </div>
 
+  </section>
+  <div class="album py-5 jumbotron" style="padding-top: 0px !important; padding-bottom: 0px !important;">
+    <div class="container">
+      <h2>Skills</h2>
+      <hr>
+      <ul>
+        <li>
+          <b>Programming Language</b>
+            <ul>
+              {% for p in programming %}
+                <li>{{ p.name }}</li>
+              {% endfor %}
+            </ul>
+        </li>
+        <li>
+        <b>Web Development</b>
+            <ul>
+              {% for w in web %}
+                <li>{{ w.name }}</li>
+              {% endfor %}
+            </ul>
+        </li>
+        <li>
+        <b>Storage Technologies</b>
+            <ul>
+              {% for s in storage %}
+                <li>{{ s.name }}</li>
+              {% endfor %}
+            </ul>
+        </li>
+        <li>
+        <b>Softwares</b>
+            <ul>
+              {% for s in software %}
+                <li>{{ s.name }}</li>
+              {% endfor %}
+            </ul>
+        </li>
+        <li>
+        <b>Other Skills</b>
+            <ul>
+              {% for other in others %}
+                <li>{{ other.name }}</li>
+              {% endfor %}
+            </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="container">
+      <h2>Projects</h2>
+      <hr>
+      <ul>
+          {% for project in projects %}
+          <li>
+            <b>{{ project.title }}</b>
+              <ul>
+                <li>{{ project.summary }}</li>
+                <li><a href="{{ project.url }}" target="_blank">View Project</a></li>
+              </ul>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  
+  <div class="container">
+    <h2>Education</h2>
+    <hr>
+    <ul>
+      <li>
+      <p>
+        <b>B.Tech, Computer Science (2017-2021)</b>
+        <br>
+        Galgotia's College of Engg. & Technology
+        <br>
+        CGPA: 8.81/10
+      </p>
+  </li>
+  <li>
+
+      <p>
+        <b>XII (Senior Secondary)</b>
+        <br>
+        Year of Completion: 2017
+        <br>
+        CBSE Board (Mother Athena School)
+        <br>
+        Percentage: 94.4%
+      </p>
+
+  </li>
+  <li>
+      <p>
+        <b>X (Secondary)</b>
+        <br>
+        Year of Completion: 2015
+        <br>
+        CBSE Board (Mother Athena School)
+        <br>
+        CGPA: 9.8/10
+      </p>
+  </li>
+  </ul>
+  </div>
+</div>
 </main>
 
 {% endblock %}
