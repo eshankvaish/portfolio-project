@@ -4,7 +4,7 @@ from .models import Blog
 # Create your views here.
 
 def allblogs(request):
-    blog = Blog.objects
+    blog = Blog.objects.filter().order_by('-id')
     return render(request, 'blog/allblogs.html', {'blogs':blog})
 
 def detail(request, blog_id):

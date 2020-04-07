@@ -5,10 +5,12 @@
 
 <main role="main">
     <div class="container">
+        <hr>
     <h1 class="text-center pt-3">
         Welcome to Eshank's Blog
     </h1>
     <br>
+    {% if blogs %}
     <h2>
         Latest posts
     </h2>
@@ -20,6 +22,9 @@
         <p>{{ blog.summary }}</p>
         <hr>    
     {% endfor %}
+    {% else %}
+      <h2 class="text-center">No Blogs Available!!!</h2>
+    {% endif %}
     </div>
     
 </main>

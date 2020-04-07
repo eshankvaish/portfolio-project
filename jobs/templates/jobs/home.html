@@ -9,20 +9,62 @@
   <section class="jumbotron text-center" style="margin-bottom: 0px; padding-bottom: 40px;">
     <div class="container">
       <div class="row">
-        <div class="col-4">
+        <div class="col-3">
           <img class="img-fluid" src="{% static 'eshank1.jpg' %}" alt="" height="300px" width="300px" style="border: 1px solid black;">
         </div>
-        <div class="col-8 text-left">
-          <h1>About Me</h1>
+        <div class="col-9 text-left">
+          <h2>About</h2>
             <hr>
-            <p class="lead text-muted">Hi, I am Eshank, will add to it...</p>
-            <p><a href="mailto:eshank.vaish@gmail.com" class="btn btn-primary my-2">Email</a></p>
+            <p class="lead" style="font-size: 1.2rem;">
+              Experienced Software Quality Assurance Lead Intern with a demonstrated history of working in the information technology and services industry. Skilled in Python, Django, HTML, Cascading Style Sheets (CSS)and C++. Strong quality assurance professional with a B.Tech focused in Computer Science from Galgotia's College of Engg. & Technology, Greater Noida.
+              <br>
+              Apart from it, I have keen interest in the personal finance, economics and technology and how we can utilize the power of technology to tackle the problems faced by people.
+            </p>
         </div>      
       </div>
     </div>
 
   </section>
   <div class="album py-5 jumbotron" style="padding-top: 0px !important; padding-bottom: 0px !important;">
+    <div class="container">
+      <h2>Education</h2>
+      <hr>
+      <ul>
+        <li>
+        <p>
+          <b>B.Tech, Computer Science (2017-2021)</b>
+          <br>
+          Galgotia's College of Engg. & Technology
+          <br>
+          CGPA: 8.81/10
+        </p>
+    </li>
+    <li>
+  
+        <p>
+          <b>XII (Senior Secondary)</b>
+          <br>
+          Year of Completion: 2017
+          <br>
+          CBSE Board (Mother Athena School)
+          <br>
+          Percentage: 94.4%
+        </p>
+  
+    </li>
+    <li>
+        <p>
+          <b>X (Secondary)</b>
+          <br>
+          Year of Completion: 2015
+          <br>
+          CBSE Board (Mother Athena School)
+          <br>
+          CGPA: 9.8/10
+        </p>
+    </li>
+    </ul>
+    </div>
     <div class="container">
       <h2>Skills</h2>
       <hr>
@@ -70,6 +112,34 @@
       </ul>
     </div>
     <div class="container">
+      <h2>Internships</h2>
+      <hr>
+      <ul>
+        <li>
+          <b><a href="https://www.atg.world" target="_blank" style="text-decoration: none; color: inherit;">Across The Globe (ATG)</a></b>
+          <ul>
+            <li>
+              Software Quality Assurance Lead Intern <br>
+              <span class="text-muted"> January 2020 - Present</span>
+            </li>
+            <li>
+              Software Quality Assurance Intern <br>
+              <span class="text-muted"> August 2019 - December 2019</span>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <b><a href="http://www.ecell-fms.com/" target="_blank" style="text-decoration: none; color: inherit;">Entrepreneurship Cell, FMS Delhi</a></b>
+          <ul>
+            <li>
+              Campus Ambassdor <br>
+              <span class="text-muted"> January 2019 - February 2019</span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="container">
       <h2>Projects</h2>
       <hr>
       <ul>
@@ -78,52 +148,14 @@
             <b>{{ project.title }}</b>
               <ul>
                 <li>{{ project.summary }}</li>
-                <li><a href="{{ project.url }}" target="_blank">View Project</a></li>
+                <li><a href="{{ project.url }}" target="_blank" style="text-decoration: none; color: inherit;">View on GitHub <i class='fas fa-external-link-alt'></i></a></li>
               </ul>
           </li>
         {% endfor %}
       </ul>
     </div>
   
-  <div class="container">
-    <h2>Education</h2>
-    <hr>
-    <ul>
-      <li>
-      <p>
-        <b>B.Tech, Computer Science (2017-2021)</b>
-        <br>
-        Galgotia's College of Engg. & Technology
-        <br>
-        CGPA: 8.81/10
-      </p>
-  </li>
-  <li>
-
-      <p>
-        <b>XII (Senior Secondary)</b>
-        <br>
-        Year of Completion: 2017
-        <br>
-        CBSE Board (Mother Athena School)
-        <br>
-        Percentage: 94.4%
-      </p>
-
-  </li>
-  <li>
-      <p>
-        <b>X (Secondary)</b>
-        <br>
-        Year of Completion: 2015
-        <br>
-        CBSE Board (Mother Athena School)
-        <br>
-        CGPA: 9.8/10
-      </p>
-  </li>
-  </ul>
-  </div>
+  
 </div>
 </main>
 
